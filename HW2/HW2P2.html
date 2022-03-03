@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<title>CNIT 133 Homework-Part2:</title>
+
+<style>
+body {background-color: #dceff5; }
+.body { width: 360px; margin: 0px auto;text-align:left;}
+</style>
+
+</head>
+<body>
+    <a href="javascript:history.go(-1)">[Go Back]</a>
+</body>
+<script>
+    function process () 
+    {
+        var int1, int2 ,int3, sum, avg, prod;
+        
+        Integer1 = document.forms["myform"].elements["int1"].value;
+        Integer2 = document.forms["myform"].elements["int2"].value; //document.myform.int2.value;
+        Integer3 = document.forms["myform"].elements["int3"].value; //document.getElementById("int3").value;
+
+        int1 = parseInt (Integer1);
+        int2 = parseInt (Integer2);
+        int3 = parseInt (Integer3);
+
+        if (isNaN(n1) || isNaN(n2) || isNaN(n3) ) {
+        alert("Please enter integers only!!");}
+
+        //Three integers calculation
+        sum = int1 + int2 + int3;
+        //document.forms["myform"].elements["sum"].value = sum;
+        avg = sum / 3;
+        //document.forms["myform"].elements["avg"].value = avg;
+        prod = int1 * int2 * int3;
+        //document.forms["myform"].elements["prodres"].value = prod;
+        //var ints = (int1,int2,int3)
+        //var maxm = max(ints)
+        //var minm = min(ints)
+        
+        document.forms["myforms"].elements["results"].value = ("The sum of 3 integers = " + sum + 
+        "\nAverage of 3 integers = " + avg + 
+        "\nProduct of 3 integers = " + prod
+         //+"\nLargest of integers = " + max + 
+        //"\nSmallest of integers = " + min
+        )      
+        }        
+</script>
+
+<section class="body";  >
+    <h1>HW2 Part2:-</h1>
+    <p style="font: bold 14px ; text-align:justify; width: 500px;">
+    Please provide 3 integers in the given text field below. This script calcuates sum, average, and product of the three integers, and the smallest and largest of the three integers.</p>
+    <form id="myform" name="myform">
+                    <table>
+                        <tr>
+                            <td>Integer1:</td>
+                            <td><input type="number/text" id="int1" size="10"></td>
+                        </tr>
+                        <tr>
+                            <td>Integer2:</td>
+                            <td><input type="number/text" id="int2" size="10"></td>
+                        </tr>
+                        <tr>
+                            <td>Integer3:</td>
+                            <td><input type="number/text" id="int3" size="10""></td>
+                        </tr>
+                    </table>
+                    
+                    <table>
+                        <br><br>
+                        Results: <textarea rows="6" cols="50" id="results" readonly></textarea> <br><br>
+                        <input type="button" onclick="process()" value="SUBMIT">
+                        <input type="reset" value="RESET">
+                        <!--<tr>
+                            <td>Sum of three integers:</td>
+                            <td><input type="number/text" id="sum" size="10" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>Average of three integers:</td>
+                            <td><input type="number/text" id="avg" size="10" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>Product of three integers:</td>
+                            <td><input type="number/text" id="prodres" size="10" readonly></td>
+                        </tr>
+                    </table>
+                    <br>
+                    <table>
+                        <tr>
+                            <td>Sum of largest and smallest integers:</td>
+                            <td><input type="number/text" id="prod" size="10" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>Average of largest and smallest integers:</td>
+                            <td><input type="number/text" id="prod" size="10" readonly></td>
+                        </tr>
+                        <tr>
+                            <td>Product of largest and smallest integers:</td>
+                            <td><input type="number/text" id="prod" size="10" readonly></td>
+                        </tr>-->
+                    </table>        
+                    <br>
+                        <button type="button">Click to fade results</button>
+                    <br><br>
+            </form>
+</section>
+
+</html>
