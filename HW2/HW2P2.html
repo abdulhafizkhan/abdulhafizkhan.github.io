@@ -30,24 +30,27 @@ body {background-color: #dceff5; }
         if (isNaN(n1) || isNaN(n2) || isNaN(n3) ) {
         alert("Please enter integers only!!");}
 
+
+        var int = [int1, int2, int3];
+        sum = 0;
+        for (var i = 0; i < int.length; i++) {sum += int[i];}
         //Three integers calculation
         sum = int1 + int2 + int3;
         //document.forms["myform"].elements["sum"].value = sum;
-        avg = sum / 3;
-        //document.forms["myform"].elements["avg"].value = avg;
+        avg = sum / int.length;
+        var max = Math.max.apply(Math,int)
+        var min = Math.min.apply(Math,int)
         prod = int1 * int2 * int3;
-        //document.forms["myform"].elements["prodres"].value = prod;
-        //var ints = (int1,int2,int3)
-        //var maxm = max(ints)
-        //var minm = min(ints)
+
         
         document.forms["myforms"].elements["results"].value = ("The sum of 3 integers = " + sum + 
         "\nAverage of 3 integers = " + avg + 
-        "\nProduct of 3 integers = " + prod
-         //+"\nLargest of integers = " + max + 
-        //"\nSmallest of integers = " + min
-        )      
+        "\nProduct of 3 integers = " + prod +
+        "\nSmallest of 3 integers = "+ min +
+        "\nLargest of 3 integers = "+ max)      
         }        
+
+        
 </script>
 
 </body>
