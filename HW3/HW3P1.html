@@ -1,6 +1,120 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <title>CNIT 133 Homework</title>
-    <meta name="Description" content="CNIT 133Homework 3 - Functions">
+<meta charset="utf-8">
+<title>Student Grades:</title>
+
+<style>
+body {background-color: #dceff5; }
+.body { width: 360px; margin: 0px auto;text-align:left;}
+</style>
+
+<script>
+    function process()
+{
+        var hw, mid, fin, prt;
+        var hwAvg, midExam, finalExam, participation, final_average;
+
+        hw = document.getElementById("hwAwg").value;
+        fin = document.getElementById("feExam").value;
+        mid = document.getElementById("mExam").value;
+        prt = document.getElementById("parti").value;
+
+        if ( isNaN(hw) || isNaN(fin) || isNaN(mid) || isNaN(prt)  || hw=="" || fin==""|| hw > 100 || hw < 0 || fin < 0 || fin > 100 || mid > 100 || mid < 0 || prt < 0 || prt > 100 )
+    {
+     document.getElementById("errOut").innerHTML = errMsg1;
+    }
+    
+    else
+    {
+     
+     hwAvg = parseInt(hw);
+     midExam = parseInt(mid);
+     finalExam = parseInt(fin);
+     participation = parseInt(prt);
+
+    //Calculation of final average
+    final_average = (.5 * hwAvg) + (.2 * midExam) + (.2 * finalExam) + (.1 * participation);  
+    
+    switch(true) 
+    {
+        
+        case (final_avg >= 90):
+            document.getElementById("results").innerHTML = ("The final average is " + Math.round(final_average) +  
+            "<br>The final grade is A")
+            break;
+
+        case (final_avg >= 80):
+            document.getElementById("results").innerHTML = ("The final average is " + Math.round(final_average) +  
+            "<br>The final grade is B")
+            break;
+
+        case (final_avg >= 70):
+            document.getElementById("results").innerHTML = ("The final average is " + Math.round(final_average) +  
+            "<br>The final grade is C") 
+            break;
+
+        case (final_avg >= 60):
+            document.getElementById("results").innerHTML = ("The final average is " + Math.round(final_average) +  
+            "<br>The final grade is D<br><br>Must retake the course")
+            break;
+            
+            default:
+                document.getElementById("results").innerHTML = ("The final average is " + Math.round(final_average) +  
+                "<br>The final grade is F<br><br>Must retake the course")
+                
+    }
+ }
+}
+
+
+function result()
+{
+    document.getElementById("results").innerHTML = "";
+    document.getElementById("errOut").innerHTML = "";
+}
+    
+</script>
+</head>
+<body>
+    <a href="javascript:history.go(-1)">[Go Back]</a>
+    <section class="body">
+        <h1>Student Grades</h1>
+        <form name="myform">
+            <table>
+                <tr>
+                <td>Homework Average: </td><td><input type="text" id="hwavg" size="4"></td>
+                </tr>
+                
+                <tr>
+                <td>Final Exam: </td>
+                <td><input type="text" id="fexam" size="4"></td>
+                </tr>
+                
+                <tr>
+                <td>Mid Exam: </td><td><input type="text" id="mexam" size="4"></td>
+                </tr>
+                
+                <tr>
+                <td>Participation: </td>
+                <td><input type="text" id="parti" size="4" onkeyup="process();"></td>
+                </tr>                
+            </table>
+            <br>
+            
+            <div id ="errOut"></div> 
+            <br>
+            <table>
+                Summary of Final Grade: <textarea rows="6" cols="50" id="results" readonly></textarea> <br><br>
+                        <input type="button" onclick="process()" value="SUBMIT">
+                        <input type="reset" value="RESET" onclick="res()"><br><br>
+            </table>
+            
+            
+        </form>
+    </section>
+</body>
+</html>
+        
+
